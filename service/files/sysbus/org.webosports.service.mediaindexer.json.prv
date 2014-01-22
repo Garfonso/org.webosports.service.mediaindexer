@@ -1,0 +1,1 @@
+{"role": {"allowedNames": ["org.webosports.service.mediaindexer"], "type": "regular", "exeName": "js"}, "permissions": [{"inbound": ["*"], "outbound": ["*"], "service": "org.webosports.service.mediaindexer"}]}

@@ -1,0 +1,25 @@
+{
+	"id":				"org.webosports.service.mediaindexer",
+	"description":		"Indexes media files in the data partition",
+	"engine":			"node",
+	"activityTimeout":	"30",
+	"services":	[
+		{
+			"name":			"org.webosports.service.mediaindexer",
+			"description":	"Indexes media files in the data partition",
+			"golbalized":	false,
+			"commands":	[
+				{
+					"name":			"checkIndex",
+					"assistant":	"CheckIndexAssistant",
+					"public":		false
+				},
+				{
+					"name":			"watchFiles",
+					"assistant":	"WatchFilesAssistant",
+					"public":		false
+				}
+			]
+		}
+	]
+}

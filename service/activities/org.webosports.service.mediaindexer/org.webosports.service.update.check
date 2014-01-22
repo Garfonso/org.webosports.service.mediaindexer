@@ -1,0 +1,26 @@
+{
+	"activity": {
+		"name": "org.webosports.service.mediaindexer: Periodic Media Indexing",
+		"description": "Periodic media index check",
+		"callback": {
+			"method": "palm://org.webosports.service.mediaindexer/checkIndex",
+			"params": {}
+		},
+		"requirements" : {
+			"internet" : false
+		},
+		"type": {
+			"background" :		true,
+			"userInitiated":	false,
+			"pausable":			true,
+			"cancellable":		true,
+			"probe":			false,
+			"persist":			true,
+			"explicit":			true,
+			"continuous":		false
+		},
+		"schedule": { "interval": "24h", "precise": false }
+	},
+	"start": true,
+	"replace": true
+}
