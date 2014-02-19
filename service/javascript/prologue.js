@@ -13,6 +13,7 @@ if (typeof require === "undefined") {
 	require = IMPORTS.require;
 }
 var fs = require('fs');
+var taglib =  require('taglib');
 
 console.log("--------->Loaded Libraries OK");
 
