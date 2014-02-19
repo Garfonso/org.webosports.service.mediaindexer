@@ -6,6 +6,9 @@
 		}
 	},
 	{
+		"source": "javascript/Config.js"
+	},
+	{
 		"source": "javascript/prologue.js"
 	},
 	{
@@ -13,8 +16,5 @@
 	},
 	{
 		"source": "javascript/assistants/watchFilesAssistant.js"
-	},
-	{
-		"source": "javascript/utils/activities.js"
 	}
 ]
