@@ -14,24 +14,27 @@ WatchFilesAssistant.prototype.run = function (outerFuture) {
 		outerFuture.result = { returnValue: false, success: false, error: true, msg: error.message};
 	}
 
+	log("Watching " + Config.rootDirectory + " for changes...");
 	this.watcher = fs.watch(Config.rootDirectory, function changeCB(event, filename) {
-		debug("FileChagen: " + filename + " - " + event);
+		debug("watcher", "FileChagen: " + filename + " - " + event);
 
 		//TODO: check if filename is filled on target platform.
 
 	});
 
 	this.watcher.on("error", function errorCB(error) {
-		debug("Could not watch filesystem: " + JSON.stringify(error));
+		debug("watcher", "Could not watch filesystem: " + JSON.stringify(error));
 		handleError("Could not watch filesystem", error);
 	});
 
+	outerFuture.result = { returnValue: true };
 	return outerFuture;
 };
 
 WatchFilesAssistant.prototype.complete = function (activity) {
 	"use strict";
-	if (this.watcher) {
+	log("Watcher staying active in background...");
+	/*if (this.watcher) {
 		this.watcher.close();
-	}
+	}*/
 };
