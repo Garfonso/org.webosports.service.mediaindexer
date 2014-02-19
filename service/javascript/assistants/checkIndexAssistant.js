@@ -1,5 +1,5 @@
 /*jslint node: true */
-/*global log, debug, Future, ActivityHelper, PalmCall */
+/*global log, debug, Future, ActivityHelper, PalmCall, Config */
 
 var CheckIndexAssistant = function () {
 	"use strict";
@@ -24,5 +24,11 @@ CheckIndexAssistant.prototype.run = function (outerFuture) {
 
 CheckIndexAssistant.prototype.complete = function (activity) {
 	"use strict";
-	return ActivityHelper.restartActivity(activity);
+	var future = new Future({returnValue: true}), restart;
+	if (activity) {
+		log("Completing activity " + activity.name);
+		restart = activity.name === Config.activityName; //could also be called from command line. Don't restart then.
+		return activity.complete(restart);
+	}
+	return future;
 };

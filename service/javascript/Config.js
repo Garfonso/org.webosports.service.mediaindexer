@@ -3,5 +3,6 @@ var Config = {
 	excludes: [],
 	debug: {
 		all: true
-	}
+	},
+	activityName: "org.webosports.service.mediaindexer: Periodic Media Indexing"
 };
