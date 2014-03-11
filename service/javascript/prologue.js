@@ -12,8 +12,9 @@ var DB = Foundations.Data.DB;
 if (typeof require === "undefined") {
 	require = IMPORTS.require;
 }
-var fs = require('fs');
-var taglib =  require('taglib');
+var fs = require("fs");
+//var taglib = require("taglib");
+var sqlite = require("sqlite3");
 
 console.log("--------->Loaded Libraries OK");
 
